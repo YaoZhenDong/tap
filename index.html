@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+
+		   var ofseetx,
+       movex;
+
+        function touchstart(e){
+          ofseetx=e.touches[0].clientX
+            // console.log(ofseetx) 
+        } 
+        function touchmove(e){
+        	movex=e.touches[0].clientX
+			 
+        } 
+        function touchend(e){
+        	if(ofseetx-movex>0){
+        		if(ofseetx-movex>50){console.log("左划")}
+               
+        	}else if(ofseetx-movex<0){
+        		if(ofseetx-movex<-50){console.log("右划")}
+        		
+        	}
+             
+        } 
+   document.addEventListener("touchstart",touchstart,false);
+
+   document.addEventListener("touchmove",touchmove,false);
+
+   document.addEventListener("touchend",touchend,false);
+
+
+</script>	
+</body>
+</html>
